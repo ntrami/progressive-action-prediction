@@ -299,8 +299,9 @@ if __name__ == "__main__":
     net.net = torch.nn.DataParallel(net.net, device_ids=[gpu_id for gpu_id in (args.gpus)])
 
     # checkpoint loading
-    net.net.load_state_dict(torch.load(args.chkp)['state_dict'])
-
+    # net.net.load_state_dict(torch.load(args.chkp)['state_dict'])
+    net.net.load_state_dict(torch.load(args.chkp), strict=False)
+    # https://stackoverflow.com/questions/68453123/runtimeerror-errors-in-loading-state-dict-for-dataparallel-unexpected-keys
 
 
     # define evaluation metric
