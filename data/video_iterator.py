@@ -305,7 +305,8 @@ class VideoIter(data.Dataset):
         # Esure that both given dataset location and csv filepath do exist
         assert os.path.exists(location), "VideoIter:: failed to locate dataset at given location: `{}'".format(location)
         assert os.path.exists(csv_file), "VideoIter:: failed to locate csv file at given location: `{}'".format(csv_file)
-
+        # print("location: ", location)
+        # print("csv_file: ", csv_file)
         # building dataset
         # - videos_dict : Used to store all videos in a dictionary format with video_index(key) : video_info(value)
         # - logging_interval: The number of iterations performed before writting to the logger
@@ -355,7 +356,6 @@ class VideoIter(data.Dataset):
             processed_ids.append(id)
 
             video_path = os.path.join(location, line.get('label'), id)
-
             # Check if label has already been found and if not add it to the dictionary:
             if not (line.get('label') in labels_dict):
                 labels_dict[line.get('label')] = label_last_index

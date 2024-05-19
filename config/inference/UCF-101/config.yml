@@ -5,8 +5,8 @@ debug_mode: True
 video_per: .3
 dataset:  UCF-101
 precision: mixed
-data_dir: ./data/UCF-101_videos
-label_dir: ./labels/UCF-101/split1
+data_dir: /content/drive/MyDrive/My Thesis/progressive-action-prediction/data/UCF-101
+label_dir: /content/drive/MyDrive/My Thesis/progressive-action-prediction/labels/UCF-101
 
 # model params
 num_samplers: 4
